@@ -58,8 +58,7 @@ def run():
             nonlocal down
             down= False
 
-        def room_1_a:
-            print('go')
+        def room_1(event):
             c.delete(selection)
             door = c.create_rectangle(1150, 400, 1190, 440, fill='green', outline='blue')
             incorrect = c.create_rectangle(290, 620, 330, 660, fill='red', outline='blue')
@@ -73,12 +72,12 @@ def run():
                 c.move(player, 0, 3)
                 c.update() 
             
-        while room_2_a:
+        def room_2(event):
             door = c.create_rectangle(1150, 400, 1190, 440, fill='green', outline='blue')
             for i in range(5):
                 incorrect = c.create_rectangle(290, i*20, 330, i*50, fill='red', outline='blue')
             
-        while room_3_a:
+        def room_3(event):
             door = c.create_rectangle(1150, 400, 1190, 440, fill='green', outline='blue')
             incorrect = c.create_rectangle(290, 620, 330, 660, fill='red', outline='blue') 
 
@@ -91,9 +90,9 @@ def run():
         root.bind('<KeyRelease->', up_s)
         root.bind('<KeyPress-Down>', down)
         root.bind('<KeyRelease-Down>', down_s)
-        root.bind('<1>', room_1)
-        root.bind('<2>', room_2)
-        root.bind('<3>', room_3)
+        root.bind('1', room_1)
+        root.bind('2', room_2)
+        root.bind('3', room_3)
 
         right(event)
         right_s(event)
